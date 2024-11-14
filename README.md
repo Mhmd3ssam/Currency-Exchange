@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Currency-Exchange App
 
-## Getting Started
+A simple and efficient currency exchange application built with **Next.js** and **ShadCN components**. This app allows users to easily view and exchange currency rates. It uses a custom React hook to fetch exchange rates from an API, handling loading and error states seamlessly.
 
-First, run the development server:
+## Features
+
+- **Currency Rates**: View real-time currency exchange rates.
+- **ShadCN UI Components**: Built using ShadCN components for a modern, responsive UI.
+- **Custom Hook**: Fetches currency exchange data with a custom React hook.
+- **Loading and Error Handling**: Displays loading states while fetching data and error messages in case of issues.
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Mhmd3ssam/Currency-Exchange
+   ```
+
+### Step 2: Install Dependencies
+
+Navigate into the project folder and install the required dependencies using `npm`:
+
+```bash
+cd currency-exchange
+npm install
+```
+
+### Step 3: Start the Development Server
+
+After the dependencies are installed, start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- The app automatically fetches currency exchange rates.
+- Once the data is fetched successfully, the **currency exchange rates** are displayed for the user to view.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Custom Hook: `useCurrencyExchange`
 
-## Learn More
+The `useCurrencyExchange` hook is responsible for fetching real-time currency exchange rates and handling loading and error states.
 
-To learn more about Next.js, take a look at the following resources:
+### Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To use this custom hook, simply call it inside your React component:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```jsx
+const {
+  currencyData: { amount, fromCurrency, toCurrency },
+  setCurrencyDate,
+  currencies,
+  convertResult,
+  setConvertResult,
+  isLoading,
+} = useCurrencyExchange();
+```
 
-## Deploy on Vercel
+## Technologies Used
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 1. **Next.js**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+A React framework for building production-ready web apps.
+
+### 2. **ShadCN Components**
+
+Reusable UI components for building modern interfaces, customizable and compatible with React.
+
+### 4. **API for Currency Data**
+
+An API is used to fetch real-time currency exchange rates and display them in the app.
+
+## Author
+
+Built with ❤️ by [Mohamed Essam]
+Feel free to reach out or contribute to the project!
