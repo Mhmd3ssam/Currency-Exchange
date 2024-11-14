@@ -59,7 +59,7 @@ export function useCurrencyExchange() {
       fetchExchangeRate(
         currencyData.fromCurrency,
         currencyData.toCurrency,
-        currencyData.amount
+        parseInt(currencyData.amount)
       );
     }
   }, [currencyData, fetchExchangeRate]);
