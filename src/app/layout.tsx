@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Currency Exchange",
+  title: "Currency Exchange 💸",
   description: "is an app that provides real-time exchange rates",
 };
 

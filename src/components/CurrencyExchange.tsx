@@ -1,5 +1,4 @@
 "use client";
-import { useEffect } from "react";
 
 import { ArrowLeftRightIcon as ArrowsLeftRight } from "lucide-react";
 
@@ -17,6 +16,10 @@ import {
 import { useCurrencyExchange } from "../Hooks/useCurrencyExchange";
 
 import BG from "../assets/BG.jpg";
+
+interface Currencies {
+  [key: string]: string;
+}
 
 function CurrencyExchange() {
   const {
@@ -55,9 +58,7 @@ function CurrencyExchange() {
       });
     }
   };
-  useEffect(() => {
-    document.title = "Currency Exchange 💸";
-  }, []);
+ 
   const showReset = fromCurrency && toCurrency && amount !== "1.0";
 
   return (
@@ -115,7 +116,7 @@ function CurrencyExchange() {
                         value={currencyKey}
                         disabled={currencyKey === toCurrency}
                       >
-                        {currencies[currencyKey] || currencyKey}
+                        {(currencies as unknown as Currencies)[currencyKey] || currencyKey}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -151,7 +152,7 @@ function CurrencyExchange() {
                         value={currencyKey}
                         disabled={currencyKey === fromCurrency}
                       >
-                        {currencies[currencyKey] || currencyKey}
+                        {(currencies as unknown as Currencies)[currencyKey] || currencyKey}
                       </SelectItem>
                     ))}
                   </SelectContent>

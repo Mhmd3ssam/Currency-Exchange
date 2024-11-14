@@ -2,8 +2,14 @@ import { useState, useEffect, useCallback } from "react";
 
 import debounce from "lodash.debounce";
 
+interface CurrencyData {
+  amount: string;
+  fromCurrency: string;
+  toCurrency: string;
+}
+
 export function useCurrencyExchange() {
-  const [currencyData, setCurrencyDate] = useState({
+  const [currencyData, setCurrencyDate] = useState<CurrencyData>({
     amount: "1.0",
     fromCurrency: "",
     toCurrency: "",
